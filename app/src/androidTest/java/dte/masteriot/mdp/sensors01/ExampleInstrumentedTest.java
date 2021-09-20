@@ -1,4 +1,4 @@
-package dte.masteriot.mdp.showlightsensor;
+package dte.masteriot.mdp.sensors01;
 
 import android.content.Context;
 

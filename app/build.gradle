@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "dte.masteriot.mdp.showlightsensor"
+        applicationId "dte.masteriot.mdp.sensors01"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1

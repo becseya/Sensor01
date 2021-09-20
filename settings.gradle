@@ -1,2 +1,2 @@
-rootProject.name = "ShowLightSensor"
+rootProject.name = "Sensors01"
 include ':app'
