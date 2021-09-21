@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         sensors.add(new My3DSensor("Accelerometer", "Accel", Sensor.TYPE_ACCELEROMETER, this,
                 findViewById(R.id.bAccel),
                 findViewById(R.id.accelMeasurement)));
+        sensors.add(new MyEventCounterSensor("Step detector", "Steps", Sensor.TYPE_STEP_DETECTOR, this,
+                findViewById(R.id.bStep),
+                findViewById(R.id.stepMeasurement)));
     }
 
     @Override
