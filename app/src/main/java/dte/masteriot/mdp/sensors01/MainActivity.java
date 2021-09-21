@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     MySensor sLight;
+    MySensor sAccel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +28,8 @@ public class MainActivity extends AppCompatActivity {
         sLight = new MySensor("Light", "Light", Sensor.TYPE_LIGHT, this,
                 findViewById(R.id.bLight),
                 findViewById(R.id.lightMeasurement));
+        sAccel = new My3DSensor("Accelerometer", "Accel", Sensor.TYPE_ACCELEROMETER, this,
+                findViewById(R.id.bAccel),
+                findViewById(R.id.accelMeasurement));
     }
 }
