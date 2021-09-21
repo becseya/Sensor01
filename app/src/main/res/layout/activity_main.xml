@@ -13,7 +13,6 @@
         android:layout_height="50dp"
         android:layout_weight="1"
         android:background="@drawable/round_button_off"
-        android:text="@string/light_sensor_off"
         android:autoSizeTextType="uniform"
         android:padding="5dp"
         android:layout_margin="25dp"

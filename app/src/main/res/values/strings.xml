@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Sensors01</string>
-    <string name="light_sensor_off">Light\nOFF</string>
-    <string name="light_sensor_on">Light\nON</string>
+    <string name="sensor_off">\nOFF</string>
+    <string name="sensor_on">\nON</string>
 </resources>

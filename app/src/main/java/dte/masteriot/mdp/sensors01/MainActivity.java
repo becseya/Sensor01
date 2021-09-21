@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         // Get the reference to the sensor manager:
         MySensor.sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
-        sLight = new MySensor(Sensor.TYPE_LIGHT, this, findViewById(R.id.bLight), findViewById(R.id.lightMeasurement));
+        sLight = new MySensor("Light", "Light", Sensor.TYPE_LIGHT, this,
+                findViewById(R.id.bLight),
+                findViewById(R.id.lightMeasurement));
     }
 }
