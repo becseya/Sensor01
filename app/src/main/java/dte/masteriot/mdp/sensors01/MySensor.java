@@ -1,6 +1,7 @@
 package dte.masteriot.mdp.sensors01;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -37,9 +38,6 @@ public class MySensor implements SensorEventListener, View.OnClickListener{
 
         // Listener for the button:
         button.setOnClickListener(this);
-
-        // Set default text of button on startup
-        updateActivity();
     }
 
     @Override
@@ -73,5 +71,16 @@ public class MySensor implements SensorEventListener, View.OnClickListener{
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
         // In this app we do nothing if sensor's accuracy changes
+    }
+
+    public void loadState(SharedPreferences preferences) {
+        active = preferences.getBoolean(myName, false);
+
+        // Set default text of button
+        updateActivity();
+    }
+
+    public void saveState(SharedPreferences.Editor editor) {
+        editor.putBoolean(myName, active);
     }
 }
