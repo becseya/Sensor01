@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     final static String[] REQUIRED_PERMISSIONS = {
         Manifest.permission.ACTIVITY_RECOGNITION,
+        Manifest.permission.VIBRATE,
         };
 
     List<MySensor> sensors = new ArrayList<>();
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         sensors.add(new My3DSensor("Accelerometer", "Accel", Sensor.TYPE_ACCELEROMETER, this,
                 findViewById(R.id.bAccel),
                 findViewById(R.id.accelMeasurement)));
-        sensors.add(new MyEventCounterSensor("Step detector", "Steps", Sensor.TYPE_STEP_DETECTOR, this,
+        sensors.add(new MyVibratingCounterSensor("Step detector", "Steps", Sensor.TYPE_STEP_DETECTOR, this,
                 findViewById(R.id.bStep),
                 findViewById(R.id.stepMeasurement)));
     }
