@@ -3,7 +3,7 @@ package dte.masteriot.mdp.sensors01;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.SensorEvent;
-import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MyEventCounterSensor extends MySensor {
@@ -11,8 +11,8 @@ public class MyEventCounterSensor extends MySensor {
     private final String myTotalEventsKey;
     protected Integer totalEvents = 0;
 
-    public MyEventCounterSensor(String name, String name_short, int sensor_type, Context context, Button button, TextView display) {
-        super(name, name_short, sensor_type, context, button, display);
+    public MyEventCounterSensor(String name, String name_short, int sensor_type, Context context, Switch switch_, TextView display) {
+        super(name, name_short, sensor_type, context, switch_, display);
         myTotalEventsKey = name + "_steps";
     }
 

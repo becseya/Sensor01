@@ -13,35 +13,32 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Switch
             android:id="@+id/bLight"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:background="@drawable/round_button_off"
             android:autoSizeTextType="uniform"
             android:padding="5dp"
             android:layout_margin="25dp"
             android:textAllCaps="false" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Switch
             android:id="@+id/bAccel"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
-            android:background="@drawable/round_button_off"
             android:padding="5dp"
             android:layout_margin="25dp"
             android:textAllCaps="false" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Switch
             android:id="@+id/bStep"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:autoSizeTextType="uniform"
-            android:background="@drawable/round_button_off"
             android:padding="5dp"
             android:layout_margin="25dp"
             android:textAllCaps="false" />

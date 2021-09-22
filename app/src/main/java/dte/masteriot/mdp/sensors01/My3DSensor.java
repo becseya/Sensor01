@@ -2,13 +2,13 @@ package dte.masteriot.mdp.sensors01;
 
 import android.content.Context;
 import android.hardware.SensorEvent;
-import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class My3DSensor extends MySensor {
 
-    public My3DSensor(String name, String name_short, int sensor_type, Context context, Button button, TextView display) {
-        super(name, name_short, sensor_type, context, button, display);
+    public My3DSensor(String name, String name_short, int sensor_type, Context context, Switch switch_, TextView display) {
+        super(name, name_short, sensor_type, context, switch_, display);
     }
 
     @Override

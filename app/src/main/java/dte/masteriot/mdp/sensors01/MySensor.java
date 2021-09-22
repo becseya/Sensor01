@@ -8,14 +8,16 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
-public class MySensor implements SensorEventListener, View.OnClickListener{
+public class MySensor implements SensorEventListener, CompoundButton.OnCheckedChangeListener{
 
     public static SensorManager sensorManager = null;
 
     protected final TextView myDisplay;
-    protected final Button myButton;
+    protected final Switch mySwitch;
     protected final String myName;
     protected final String myNameShort;
     protected final Sensor mySensor;
@@ -23,9 +25,9 @@ public class MySensor implements SensorEventListener, View.OnClickListener{
 
     protected boolean active = false;
 
-    public MySensor(String name, String name_short, int sensor_type, Context context, Button button, TextView display) {
+    public MySensor(String name, String name_short, int sensor_type, Context context, Switch switch_, TextView display) {
         myDisplay = display;
-        myButton = button;
+        mySwitch = switch_;
         myContext = context;
         myName = name;
         myNameShort = name_short;
@@ -36,27 +38,25 @@ public class MySensor implements SensorEventListener, View.OnClickListener{
         // Get the reference to the sensor:
         mySensor = sensorManager.getDefaultSensor(sensor_type);
 
-        // Listener for the button:
-        button.setOnClickListener(this);
+        // Listener for the switch:
+        mySwitch.setOnCheckedChangeListener(this);
     }
 
     @Override
-    public void onClick(View view) {
-        active = !active;
+    public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+        active = checked;
         updateActivity();
     }
 
     void updateActivity() {
         if (active) {
             // register listener and make the appropriate changes in the UI:
-            myButton.setText(myNameShort + myContext.getResources().getString(R.string.sensor_on));
-            myButton.setBackground(myContext.getResources().getDrawable(R.drawable.round_button_on));
+            mySwitch.setText(myNameShort + myContext.getResources().getString(R.string.sensor_on));
             myDisplay.setText("Waiting for first value");
             sensorManager.registerListener(MySensor.this, mySensor, SensorManager.SENSOR_DELAY_NORMAL);
         } else {
             // unregister listener and make the appropriate changes in the UI:
-            myButton.setText(myNameShort + myContext.getResources().getString(R.string.sensor_off));
-            myButton.setBackground(myContext.getResources().getDrawable(R.drawable.round_button_off));
+            mySwitch.setText(myNameShort + myContext.getResources().getString(R.string.sensor_off));
             myDisplay.setText(myName + " sensor is OFF");
             sensorManager.unregisterListener(MySensor.this, mySensor);
         }
@@ -74,13 +74,10 @@ public class MySensor implements SensorEventListener, View.OnClickListener{
     }
 
     public void loadState(SharedPreferences preferences) {
-        active = preferences.getBoolean(myName, false);
-
-        // Set default text of button
-        updateActivity();
+        //active = preferences.getBoolean(myName, false);
     }
 
     public void saveState(SharedPreferences.Editor editor) {
-        editor.putBoolean(myName, active);
+        //editor.putBoolean(myName, active);
     }
 }

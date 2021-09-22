@@ -5,7 +5,7 @@ import static android.content.Context.VIBRATOR_SERVICE;
 import android.content.Context;
 import android.hardware.SensorEvent;
 import android.os.Vibrator;
-import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,8 +16,8 @@ public class MyVibratingCounterSensor extends MyEventCounterSensor {
 
     private final Vibrator myVibrator;
 
-    public MyVibratingCounterSensor(String name, String name_short, int sensor_type, Context context, Button button, TextView display) {
-        super(name, name_short, sensor_type, context, button, display);
+    public MyVibratingCounterSensor(String name, String name_short, int sensor_type, Context context, Switch switch_, TextView display) {
+        super(name, name_short, sensor_type, context, switch_, display);
 
         myVibrator = (Vibrator) context.getSystemService(VIBRATOR_SERVICE);
 
