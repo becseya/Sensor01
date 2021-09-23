@@ -1,13 +1,19 @@
 package dte.masteriot.mdp.sensors01;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,12 +24,18 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    final static String[] REQUIRED_PERMISSIONS = {
+        Manifest.permission.ACTIVITY_RECOGNITION,
+        };
+
     List<MySensor> sensors = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        askForPermissions();
 
         // Get the reference to the sensor manager:
         MySensor.sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -55,5 +67,16 @@ public class MainActivity extends AppCompatActivity {
             s.saveState(editor);
         }
         editor.commit();
+    }
+
+    void askForPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            for (String permission : REQUIRED_PERMISSIONS) {
+                if (ActivityCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, 1);
+                    return;
+                }
+            }
+        }
     }
 }
