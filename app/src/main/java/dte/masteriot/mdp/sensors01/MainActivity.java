@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         sensors.add(new MySensor("Light", "Light", Sensor.TYPE_LIGHT, this,
                 findViewById(R.id.bLight),
                 findViewById(R.id.lightMeasurement)));
-        sensors.add(new My3DSensor("Accelerometer", "Accel", Sensor.TYPE_ACCELEROMETER, this,
+        sensors.add(new NewColorChanger3DSensor("Accelerometer", "Accel", Sensor.TYPE_ACCELEROMETER, this,
                 findViewById(R.id.bAccel),
                 findViewById(R.id.accelMeasurement)));
         sensors.add(new MyVibratingCounterSensor("Step detector", "Steps", Sensor.TYPE_STEP_DETECTOR, this,

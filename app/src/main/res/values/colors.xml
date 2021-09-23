@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#FF8C00</color>
     <color name="green">#8FBC8F</color>
+    <color name="color_when_flat">#FFBBBB</color>
+    <color name="color_when_portrait">#BBFFBB</color>
+    <color name="color_when_landscape">#BBBBFF</color>
 </resources>
