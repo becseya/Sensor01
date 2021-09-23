@@ -42,6 +42,16 @@
             android:padding="5dp"
             android:layout_margin="25dp"
             android:textAllCaps="false" />
+
+        <Switch
+            android:id="@+id/bProxy"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:padding="5dp"
+            android:layout_margin="25dp"
+            android:textAllCaps="false" />
     </LinearLayout>
 
     <TextView
@@ -86,5 +96,20 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Step sensor is OFF" />
+
+    <TextView
+        android:id="@+id/static4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Proximity sensor measurements:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/proxyMeasurement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Proxy sensor is OFF" />
 
 </LinearLayout>
