@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
         sensors.add(new MyVibratingCounterSensor("Step detector", "Steps", Sensor.TYPE_STEP_DETECTOR, this,
                 findViewById(R.id.bStep),
                 findViewById(R.id.stepMeasurement)));
-        sensors.add(new MySensor("Proximity", "Proxy", Sensor.TYPE_PROXIMITY, this,
+        sensors.add(new MyAnimatingSensor("Proximity", "Proxy", Sensor.TYPE_PROXIMITY, this,
                 findViewById(R.id.bProxy),
-                findViewById(R.id.proxyMeasurement)));
+                findViewById(R.id.proxyMeasurement),
+                findViewById(R.id.imgHand)));
     }
 
     @Override
