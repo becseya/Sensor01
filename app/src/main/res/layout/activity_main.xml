@@ -1,127 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        tools:context=".MainActivity">
 
-        <Switch
-            android:id="@+id/bLight"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:autoSizeTextType="uniform"
-            android:padding="5dp"
-            android:layout_margin="25dp"
-            android:textAllCaps="false" />
+            android:orientation="horizontal">
 
-        <Switch
-            android:id="@+id/bAccel"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:autoSizeTextType="uniform"
-            android:padding="5dp"
-            android:layout_margin="25dp"
-            android:textAllCaps="false" />
+            <Switch
+                android:id="@+id/bLight"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:padding="5dp"
+                android:layout_margin="25dp"
+                android:textAllCaps="false" />
 
-        <Switch
-            android:id="@+id/bStep"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:autoSizeTextType="uniform"
-            android:padding="5dp"
-            android:layout_margin="25dp"
-            android:textAllCaps="false" />
+            <Switch
+                android:id="@+id/bAccel"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:padding="5dp"
+                android:layout_margin="25dp"
+                android:textAllCaps="false" />
 
-        <Switch
-            android:id="@+id/bProxy"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            <Switch
+                android:id="@+id/bStep"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:padding="5dp"
+                android:layout_margin="25dp"
+                android:textAllCaps="false" />
+
+            <Switch
+                android:id="@+id/bProxy"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:padding="5dp"
+                android:layout_margin="25dp"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/static1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light sensor measurements:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lightMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light sensor is OFF" />
+
+        <TextView
+            android:id="@+id/static2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:autoSizeTextType="uniform"
-            android:padding="5dp"
-            android:layout_margin="25dp"
-            android:textAllCaps="false" />
+            android:text="Accelerometer sensor measurements:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/accelMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Accelerometer sensor is OFF" />
+
+        <TextView
+            android:id="@+id/static3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Step sensor measurements:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/stepMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Step sensor is OFF" />
+
+        <TextView
+            android:id="@+id/static4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Proximity sensor measurements:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/proxyMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Proxy sensor is OFF" />
+
+        <ImageView
+            android:id="@+id/imgHand"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_weight="1"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            app:srcCompat="@drawable/hand" />
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/static1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Light sensor measurements:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/lightMeasurement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Light sensor is OFF" />
-
-    <TextView
-        android:id="@+id/static2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Accelerometer sensor measurements:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/accelMeasurement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Accelerometer sensor is OFF" />
-
-    <TextView
-        android:id="@+id/static3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Step sensor measurements:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/stepMeasurement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Step sensor is OFF" />
-
-    <TextView
-        android:id="@+id/static4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Proximity sensor measurements:"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/proxyMeasurement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Proxy sensor is OFF" />
-
-    <ImageView
-        android:id="@+id/imgHand"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_weight="1"
-        android:paddingLeft="50dp"
-        android:paddingTop="50dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="50dp"
-        app:srcCompat="@drawable/hand" />
-
-</LinearLayout>
+</ScrollView>
